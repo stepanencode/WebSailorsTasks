@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task6</title>
+</head>
+<body>
+<script>
+    function compareNumbers(a, b) {
+        if (a === b)
+            return 0;
+        if (a > b)
+            return 1;
+        else
+            return -1;
+    }
+
+    function addNumber () {
+        let userArray = [];
+        let userNumber;
+        do {
+            userNumber = prompt('Введите число', '1');
+            if (userNumber !== null && (!isNaN(+userNumber))) {
+                userArray.push(+userNumber);
+            }
+        }
+        while(userNumber);
+        userArray.sort(compareNumbers);
+        return userArray;
+    }
+
+    let userArray = addNumber();
+    console.log(userArray);
+    console.log(userArray.length);
+    let filteredUserArray = userArray.filter(number => (number%3 === 1));
+    console.log(filteredUserArray);
+    let set = new Set(filteredUserArray);
+    console.log(set);
+</script>
+</body>
+</html>

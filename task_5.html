@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task5</title>
+</head>
+<body>
+<script>
+   let carNumber = prompt('введите гос.номер автомобиля', 'А011ЕЕ01');
+
+   function carNumberValidate(carNumber) {
+       if (carNumber.match(/^[АВЕКМНОРСТУХ]\d{3}[АВЕКМНОРСТУХ]{2}\d{2,3}$/)) {
+           alert("Проверка прошла успешно!");
+       } else {
+           alert("Номер не валидный");
+           document.location.reload();
+       }
+   }
+
+   carNumberValidate(carNumber)
+</script>
+</body>
+</html>

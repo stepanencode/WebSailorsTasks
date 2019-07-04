@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task1</title>
+</head>
+<body>
+<script>
+    function getInternetPrice () {
+        let monthNumber = prompt("Введите порядковый номер месяца", '1');
+        if (+monthNumber > 12 || +monthNumber < 1 || isNaN(+monthNumber)) {
+            alert('неверное значение месяца');
+            document.location.reload();
+        } else {
+            let daysNumber = prompt("Введите количество дней", '1');
+            const price = 450;
+            const monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let dayInMonth;
+            if (monthNumber === '2' && confirm("Это високосный год?")) {
+                dayInMonth = 29;
+            } else {
+                dayInMonth = monthDays[monthNumber - 1];
+            }
+            if (+daysNumber > dayInMonth || isNaN(+daysNumber)) {
+                alert('Неверное значение.');
+                document.location.reload();
+            } else {
+                let result = price / dayInMonth * daysNumber;
+                alert(+result.toFixed(2) + ' руб');
+                return result;
+            }
+        }
+    }
+    getInternetPrice();
+</script>
+</body>
+</html>

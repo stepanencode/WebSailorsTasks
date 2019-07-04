@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task4</title>
+</head>
+<body>
+<script>
+    function sumCharacters (characterString, charsMapping) {
+        return characterString.split("").map(i => charsMapping[i]).reduce((a, b) => a + b);
+    }
+
+    function printCharacters (characterString, charsMapping) {
+        characterString.split("").map(i => console.log(`${i}=${charsMapping[i]}`));
+    }
+
+    function sumCharactersPrint (characterString, charsMapping) {
+        console.log(sumCharacters(characterString, charsMapping));
+        printCharacters(characterString, charsMapping);
+    }
+
+    let chars = {'Н': 1, 'К': 5, 'П': 2, 'Р':4, 'О': 7};
+    let str = 'НННКПРРРРОРППППР';
+    sumCharactersPrint(str, chars)
+</script>
+</body>
+</html>

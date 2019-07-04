@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task2</title>
+</head>
+<body>
+<script>
+    function getWeekdayName () {
+        let dayNumber = prompt("Порядковый номер дня недели",'1');
+        dayNumber = Math.floor(+dayNumber);
+        console.log(dayNumber);
+        let weekdays = ["Понедельник", "Вторниик", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+        if ( +dayNumber <= 0 || +dayNumber > 7 || isNaN((+dayNumber))) {
+            alert("Неверное значение");
+            document.location.reload();
+        } else {
+            alert(weekdays[dayNumber-1])
+        }
+    }
+    getWeekdayName();
+</script>
+</body>
+</html>

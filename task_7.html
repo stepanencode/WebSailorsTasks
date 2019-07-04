@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task7</title>
+</head>
+<body>
+<script>
+  let userObject = {};
+  userObject.prop1 = 1;
+  userObject.prop2 = 2;
+  userObject.prop3 = 3;
+  userObject.prop4 = 'string';
+  userObject.prop5 = 5;
+
+  let doubleAndReduceProps = Object.values(userObject)
+      .filter(x => typeof x === "number")
+      .map(x => x*2)
+      .reduce((a, b) => a + b);
+
+  console.log(doubleAndReduceProps)
+</script>
+</body>
+</html>
