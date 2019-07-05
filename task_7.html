@@ -6,18 +6,19 @@
 </head>
 <body>
 <script>
-  let userObject = {};
-  userObject.prop1 = 1;
-  userObject.prop2 = 2;
-  userObject.prop3 = 3;
-  userObject.prop4 = 'string';
-  userObject.prop5 = 5;
-
-  let doubleAndReduceProps = Object.values(userObject)
-      .filter(x => typeof x === "number")
-      .map(x => x*2)
-      .reduce((a, b) => a + b);
-
+  let userObject = {
+      prop1: 1,
+      prop2: 2,
+      prop3: 'test',
+      prop4: 4
+  };
+  let userObjectToArray = [];
+  for (let key in userObject) {
+      if (typeof userObject[key] === "number") {
+          userObjectToArray.push(userObject[key]);
+      }
+  }
+  let doubleAndReduceProps = userObjectToArray.map(x => x*2).reduce((a, b) => a + b);
   console.log(doubleAndReduceProps)
 </script>
 </body>
